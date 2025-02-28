@@ -4,113 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fun Fact Generator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            animation: fadeIn 2s;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 20px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007bff;
-            color: white;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #factDisplay {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
-            animation: slideIn 1s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        img {
-            width: 100px;
-            height: auto;
-            margin-top: 20px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-30px); }
-            60% { transform: translateY(-15px); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>Fun Fact Generator</h1>
-        <button id="generateFact">Generate Fun Fact</button>
-        <p id="factDisplay"></p>
-        <img id="funImage" src="https://via.placeholder.com/100" alt="Fun Image">
+        <h1>Space & Cosmology Fun Facts</h1>
+        <div class="fact-box" id="fact-box">
+            Click the button to generate a fun fact!
+        </div>
+        <br>
+        <button class="btn" id="generate-btn">Generate Fun Fact</button>
     </div>
-    <script>
-        const facts = [
-            "Bananas are berries, but strawberries aren't.",
-            "Honey never spoils.",
-            "A day on Venus is longer than a year on Venus.",
-            "Octopuses have three hearts.",
-            "The Eiffel Tower can be 15 cm taller during the summer.",
-            "Some cats are allergic to humans.",
-            "A group of flamingos is called a 'flamboyance'.",
-            "There are more stars in the universe than grains of sand on Earth.",
-            "Wombat poop is cube-shaped.",
-            "Scotland's national animal is the unicorn."
-        ];
-
-        const images = [
-            "https://via.placeholder.com/100/FF0000",
-            "https://via.placeholder.com/100/00FF00",
-            "https://via.placeholder.com/100/0000FF",
-            "https://via.placeholder.com/100/FFFF00",
-            "https://via.placeholder.com/100/FF00FF",
-            "https://via.placeholder.com/100/00FFFF",
-            "https://via.placeholder.com/100/000000",
-            "https://via.placeholder.com/100/FFFFFF",
-            "https://via.placeholder.com/100/888888",
-            "https://via.placeholder.com/100/444444"
-        ];
-
-        document.getElementById('generateFact').addEventListener('click', function() {
-            const randomIndex = Math.floor(Math.random() * facts.length);
-            document.getElementById('factDisplay').textContent = facts[randomIndex];
-            document.getElementById('funImage').src = images[randomIndex];
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
